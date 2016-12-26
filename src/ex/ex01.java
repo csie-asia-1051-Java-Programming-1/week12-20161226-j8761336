@@ -7,11 +7,34 @@
  * Author: 1050210XX 周永振老師
  */
 
+import java.util.Arrays;
+import java.util.Scanner;
+
 public class ex01 {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-
+		Scanner scn =new Scanner(System.in);
+		System.out.println("輸入有幾個數值:");
+		int m1=0;int m2=0;int m3=0;int m4=0;
+		int a =scn.nextInt();
+		int sum[]=new int[a];
+		int b[]=new int[a];
+		for(int i=0;i<a;i++){
+			b[i]=scn.nextInt();
+		}
+		for(int i=0;i<a;i++){
+			m1=b[i]/1000;
+			m2=(b[i]-m1*1000)/100;
+			m3=(b[i]-m1*1000-m2*100)/10;
+			m4=(b[i]-m1*1000-m2*100-m3*10);
+			sum[i]=m1+m2+m3+m4;
+		}
+		for(int i=0;i<a;i++){
+			b[i]=b[i]+sum[i];
+		}
+		Arrays.sort(sum);
+		
 	}
 
 }
